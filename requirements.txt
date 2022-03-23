@@ -11,7 +11,7 @@ asttokens==2.0.5
 async-generator==1.10
 atomicwrites==1.4.0
 attrs==21.4.0
-autopep8==1.6.0
+autopep8
 Babel==2.9.1
 backcall==0.2.0
 backports.zoneinfo==0.2.1
@@ -46,7 +46,7 @@ Django==4.0.2
 docutils==0.17.1
 entrypoints==0.4
 executing==0.8.2
-flake8==3.9.2
+flake8
 Flask==2.0.3
 Flask-Compress==1.11
 fonttools==4.29.1
