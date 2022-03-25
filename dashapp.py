@@ -26,9 +26,9 @@ app.layout = html.Div(children=[html.H1('Crowdfunding Marketing',
                                 
                                 # dropdown for selecting what criteria you will like to visualize
                                 dcc.Dropdown(id='criteria-dropdown', 
-                                                options = [{'label':'category','value':'category'},
-                                                           {'label':'device','value':'device'},
-                                                           {'label':'age', 'value':'age'}],
+                                                options = [{'label':'Category','value':'category'},
+                                                           {'label':'Device','value':'device'},
+                                                           {'label':'Age', 'value':'age'}],
                                                 placeholder = 'Select a criteria to be used',
                                               	value = 'category',
                                                 searchable = True
@@ -52,13 +52,13 @@ def bar_chart(criteria):
     if criteria == 'category':
         sorted_grouping = grouping.sort_values(by = 'amount', ascending = False).iloc[:3]
         title = f"Top three {criteria}"
-        fig = px.bar(x = sorted_grouping.index, y = sorted_grouping.amount, title = title)
+        fig = px.bar(x = sorted_grouping.index, y = sorted_grouping.amount, labels=dict(x= criteria, y="Amount"), title = title)
         fig.update_yaxes(range = [160000, 170000])
         return fig
     else:
         sorted_grouping = grouping.sort_values(by = 'amount', ascending = False)
         title = f"Bar Chart by {criteria}"
-        fig = px.bar(x = sorted_grouping.index, y = sorted_grouping.amount, title = title)
+        fig = px.bar(x = sorted_grouping.index, y = sorted_grouping.amount, labels = dict(x = criteria, y = "Amount"), title = title)
         return fig
 
 # Run the app
